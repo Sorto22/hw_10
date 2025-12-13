@@ -1,19 +1,22 @@
-select name, duration
-from track
-where duration = (select max(duration) from song);
+SELECT name, duration
+FROM track
+WHERE duration = (SELECT max(duration) FROM song);
 
-select name
-from track
-where duration >= 210;
+SELECT name
+FROM track
+WHERE duration >= 210;
 
-select title 
-from compilation
-where (release_year between 2018 and 2020);
+SELECT title 
+FROM compilation
+WHERE (release_year BETWEEN 2018 AND 2020);
 
-select name 
-from artist 
-where name not like '% %';
+SELECT name 
+FROM artist 
+WHERE name NOT LIKE '% %';
 
-select name 
-from track 
-where name like '% my %' or name like '% мой %';
+SELECT name 
+FROM track 
+WHERE (name ILIKE '%my %' OR name ILIKE '%мой %'
+  OR name ILIKE '% my %' OR name ILIKE '% мой %'
+  OR name ILIKE '% my%' OR name ILIKE '% мой%'
+  OR name ILIKE 'my' OR name ILIKE 'мой');
