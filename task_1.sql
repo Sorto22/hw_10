@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS artist_album (
 CREATE TABLE IF NOT EXISTS track (
     track_id SERIAL PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
+	date_year INTEGER,
 	duration INTEGER NOT NULL DEFAULT 0,
     album_id INTEGER REFERENCES album(album_id)
 );
@@ -109,7 +110,7 @@ INSERT INTO track_compilation (track_id, compilation_id) VALUES
 	(6,3),
 	(7,3);
 
-INSERT INTO artistalbum (artist_id, album_id) VALUES 
+INSERT INTO artist_album (artist_id, album_id) VALUES 
 	(1,2),
 	(2,2),
 	(3,3),
