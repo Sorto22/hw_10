@@ -1,6 +1,6 @@
 SELECT name, duration
 FROM track
-WHERE duration = (SELECT max(duration) FROM song);
+WHERE duration = (SELECT max(duration) FROM track);
 
 SELECT name
 FROM track
