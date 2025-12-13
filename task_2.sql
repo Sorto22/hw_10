@@ -1,10 +1,10 @@
 select name, duration
-from song
+from track
 where duration = (select max(duration) from song);
 
 select name
-from song
-where duration <= 210;
+from track
+where duration >= 210;
 
 select title 
 from compilation
@@ -15,5 +15,5 @@ from artist
 where name not like '% %';
 
 select name 
-from song 
-where name like '%my%' or name like '%мой%';
+from track 
+where name like '% my %' or name like '% мой %';
