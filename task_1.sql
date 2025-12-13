@@ -96,10 +96,10 @@ INSERT INTO track (name, date_year, duration, album_id) VALUES
 	('track_7', 2019, 250, 7);
 
 INSERT INTO compilation (title, release_year) VALUES 
-	('comp_1', 2021),
-	('comp_2', 2022),
-	('comp_3', 2023),
-	('comp_4', 2024);
+	('comp_1', 2016),
+	('comp_2', 2018),
+	('comp_3', 2019),
+	('comp_4', 2022);
 
 INSERT INTO track_compilation (track_id, compilation_id) VALUES
 	(1,1),
