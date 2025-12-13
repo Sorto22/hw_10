@@ -34,7 +34,8 @@ CREATE TABLE IF NOT EXISTS artist_album (
 -- Создание таблицы треков
 CREATE TABLE IF NOT EXISTS track (
     track_id SERIAL PRIMARY KEY,
-    title VARCHAR(200) NOT NULL,
+    name VARCHAR(200) NOT NULL,
+	duration INTEGER NOT NULL DEFAULT 0,
     album_id INTEGER REFERENCES album(album_id)
 );
 
@@ -50,11 +51,6 @@ CREATE TABLE IF NOT EXISTS track_compilation (
     track_id INTEGER REFERENCES track(track_id),
     compilation_id INTEGER REFERENCES compilation(compilation_id)
 );
-
---добавление столбца с дительностью трека
-ALTER TABLE track 
-	ADD COLUMN duration INTEGER NOT NULL 
-	DEFAULT 0;
 
 INSERT INTO artist (name) VALUES
 	('Louna'),
@@ -89,14 +85,14 @@ INSERT INTO album (title, release_year) VALUES
 	('albmu_art_6', 2021),
 	('album_art_6', 2022);
 
-INSERT INTO track (name, date_year, album_id) VALUES 
-	('track_1', 2000, 1),
-	('track_2', 1999, 1),
-	('track_3', 2001, 2),
-	('my_trck_4', 2003, 2),
-	('my track_5', 2020, 6),
-	('track_6', 2021, 5),
-	('track_7', 2019, 7);
+INSERT INTO track (name, date_year, duration, album_id) VALUES 
+	('track_1', 2000, 189, 1),
+	('track_2', 1999, 193, 1),
+	('track_3', 2001, 80, 2),
+	('my_trck_4', 2003, 220, 2),
+	('my track_5', 2020, 290, 6),
+	('track_6', 2021, 40, 5),
+	('track_7', 2019, 250, 7);
 
 INSERT INTO compilation (title, release_year) VALUES 
 	('comp_1', 2021),
@@ -118,45 +114,6 @@ INSERT INTO artistalbum (artist_id, album_id) VALUES
 	(2,2),
 	(3,3),
 	(4,3);
-
-UPDATE track 
-	SET duration =180
-	WHERE track_id =1;
-
-UPDATE track 
-	SET duration =190
-	WHERE track_id =2;
-
-UPDATE track 
-	SET duration =280
-	WHERE track_id =3;
-
-UPDATE track 
-	SET duration =80
-	WHERE track_id =4;
-
-UPDATE track 
-	SET duration =220
-	WHERE track_id =5;
-
-UPDATE track 
-	SET duration =160
-	WHERE track_id =6;
-
-UPDATE track 
-	SET duration =380
-	WHERE track_id =7;
-
-
-
-
-
-
-
-
-
-
-
 
 
 
