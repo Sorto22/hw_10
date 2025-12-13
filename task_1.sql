@@ -69,7 +69,7 @@ INSERT INTO genre (name) VALUES
 	('POP'),
 	('Classic');
 
-INSERT INTO artistgenre (artist_id, genre_id) VALUES 
+INSERT INTO artist_genre (artist_id, genre_id) VALUES 
 	(1, 1),
 	(2, 1),
 	(3, 1),
@@ -89,12 +89,12 @@ INSERT INTO album (title, release_year) VALUES
 	('albmu_art_6', 2021),
 	('album_art_6', 2022);
 
-INSERT INTO song (name, date_year, album_id) VALUES 
+INSERT INTO track (name, date_year, album_id) VALUES 
 	('track_1', 2000, 1),
 	('track_2', 1999, 1),
 	('track_3', 2001, 2),
-	('track_4', 2003, 2),
-	('track_5', 2020, 6),
+	('my_trck_4', 2003, 2),
+	('my track_5', 2020, 6),
 	('track_6', 2021, 5),
 	('track_7', 2019, 7);
 
@@ -104,7 +104,7 @@ INSERT INTO compilation (title, release_year) VALUES
 	('comp_3', 2023),
 	('comp_4', 2024);
 
-INSERT INTO trackcompilation (trac_id, compilation_id) VALUES
+INSERT INTO track_compilation (track_id, compilation_id) VALUES
 	(1,1),
 	(2,1),
 	(3,2),
@@ -119,33 +119,33 @@ INSERT INTO artistalbum (artist_id, album_id) VALUES
 	(3,3),
 	(4,3);
 
-UPDATE song 
+UPDATE track 
 	SET duration =180
-	WHERE id =1;
+	WHERE track_id =1;
 
-UPDATE song 
+UPDATE track 
 	SET duration =190
-	WHERE id =2;
+	WHERE track_id =2;
 
-UPDATE song 
+UPDATE track 
 	SET duration =280
-	WHERE id =3;
+	WHERE track_id =3;
 
-UPDATE song 
+UPDATE track 
 	SET duration =80
-	WHERE id =4;
+	WHERE track_id =4;
 
-UPDATE song 
+UPDATE track 
 	SET duration =220
-	WHERE id =5;
+	WHERE track_id =5;
 
-UPDATE song 
+UPDATE track 
 	SET duration =160
-	WHERE id =6;
+	WHERE track_id =6;
 
-UPDATE song 
+UPDATE track 
 	SET duration =380
-	WHERE id =7;
+	WHERE track_id =7;
 
 
 
